@@ -135,7 +135,7 @@ class Poetry:
 
         if "dependencies" in local_config:
             for name, constraint in local_config["dependencies"].items():
-                if name.lower() == "python":
+                if name.lower() == "python" and not package.python_versions:
                     package.python_versions = constraint
                     continue
 
